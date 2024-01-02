@@ -1,8 +1,10 @@
 import { ReactNode } from "react";
 import style from "@/app/(afterLogin)/layoust.module.css";
 import Link from "next/link";
-import CLogo from "../../../public/clogo.png";
+import ZLogo from "../../../public/zlogo.png";
 import Image from "next/image";
+import NavMenu from "./_component/NavMenu";
+import LogoutButton from "./_component/LogOutBuuton";
 
 export default function AfterLogin({ children }: { children: ReactNode }) {
   return (
@@ -14,9 +16,18 @@ export default function AfterLogin({ children }: { children: ReactNode }) {
           <div className={style.leftSectionFixed}>
             <Link className={style.logo} href="/home">
               <div className={style.logoPill}>
-                <Image src={CLogo} alt="c.com로고" width={40} height={40} />
+                <Image src={ZLogo} alt="c.com로고" width={40} height={40} />
               </div>
             </Link>
+            <nav>
+              <ul>
+                <NavMenu />
+              </ul>
+              <Link href="/compose/tweet" className={style.postButton}>
+                게시하기
+              </Link>
+            </nav>
+            <LogoutButton />
           </div>
         </section>
       </header>

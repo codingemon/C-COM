@@ -1,3 +1,3 @@
 export default function Profile(): JSX.Element {
-  return <main>유저아이디</main>;
+  return <main>프로필페이지</main>;
 }

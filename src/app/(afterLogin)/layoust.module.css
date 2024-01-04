@@ -28,7 +28,6 @@
   position: fixed;
   /* width 275px = inherit */
   width: inherit;
-  background-color: orange;
   height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -82,7 +81,6 @@
 }
 
 .rightSectionInner {
-  background-color: aqua;
   height: 100%;
   width: 990px;
   display: flex;
@@ -92,12 +90,10 @@
 
 .main {
   width: 600px;
-  background-color: skyblue;
   height: 100dvh;
 }
 
 .rightSection {
-  background-color: blue;
   width: 350px;
   height: 100%;
 }

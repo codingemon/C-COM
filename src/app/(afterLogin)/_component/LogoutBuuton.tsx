@@ -7,7 +7,7 @@ export default function LogoutButton() {
     // 임시
     id: "pikacoding",
     nickname: "피카코딩",
-    image: "/5Udwvqim.jpg",
+    image: "/pikacoding.jpeg",
   };
 
   const onLogout = () => {};

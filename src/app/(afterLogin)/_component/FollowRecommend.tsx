@@ -7,9 +7,9 @@ export default function FollowRecommend() {
 
   // 가짜 데이터
   const user = {
-    id: "elonmusk",
-    nickname: "Elon Musk",
-    image: "/yRsRRjGO.jpg",
+    id: "JJbob",
+    nickname: "깜다람쥐",
+    image: "/jj.jpg",
   };
 
   return (

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import style from "@/app/(afterLogin)/layoust.module.css";
 import Link from "next/link";
-import ZLogo from "../../../public/zlogo.png";
+import CLogo from "../../../public/clogo.png";
 import Image from "next/image";
 import NavMenu from "./_component/NavMenu";
 import LogoutButton from "./_component/LogoutBuuton";
@@ -17,7 +17,7 @@ export default function AfterLogin({ children }: { children: ReactNode }) {
           <div className={style.leftSectionFixed}>
             <Link className={style.logo} href="/home">
               <div className={style.logoPill}>
-                <Image src={ZLogo} alt="c.com로고" width={40} height={40} />
+                <Image src={CLogo} alt="c.com로고" width={40} height={40} />
               </div>
             </Link>
             <nav>
@@ -32,7 +32,6 @@ export default function AfterLogin({ children }: { children: ReactNode }) {
           </div>
         </section>
       </header>
-      {/* 전체 */}
       <div className={style.rightSectionWrapper}>
         <div className={style.rightSectionInner}>
           <main className={style.main}>{children}</main>
@@ -48,8 +47,8 @@ export default function AfterLogin({ children }: { children: ReactNode }) {
               </form>
             </div>
             <TrendSection />
-            <div>
-              <h3 className={style.followRecommend}>팔로우 추천</h3>
+            <div className={style.followRecommend}>
+              <h3>팔로우 추천</h3>
               <FollowRecommend />
               <FollowRecommend />
               <FollowRecommend />

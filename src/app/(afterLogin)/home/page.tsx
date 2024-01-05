@@ -1,3 +1,4 @@
+import Post from "../_component/Post";
 import PostForm from "./_component/PostForm";
 import TabProvider from "./_component/TabProvider";
 import style from "./home.module.css";
@@ -9,7 +10,6 @@ export default function Home(): JSX.Element {
       <TabProvider>
         <Tab />
         <PostForm />
-        {/* <Post />
         <Post />
         <Post />
         <Post />
@@ -20,7 +20,8 @@ export default function Home(): JSX.Element {
         <Post />
         <Post />
         <Post />
-        <Post /> */}
+        <Post />
+        <Post />
       </TabProvider>
     </main>
   );

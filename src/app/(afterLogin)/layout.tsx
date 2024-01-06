@@ -7,6 +7,7 @@ import NavMenu from "./_component/NavMenu";
 import LogoutButton from "./_component/LogoutBuuton";
 import TrendSection from "./_component/TrendSection";
 import FollowRecommend from "./_component/FollowRecommend";
+import RightSearchZone from "./_component/RightSearchZone";
 
 type Props = { children: ReactNode; modal: ReactNode };
 export default function AfterLogin({ children, modal }: Props) {
@@ -37,7 +38,9 @@ export default function AfterLogin({ children, modal }: Props) {
         <div className={style.rightSectionInner}>
           <main className={style.main}>{children}</main>
           <section className={style.rightSection}>
-            <div style={{ marginBottom: 60, width: "inherit" }}>
+            <RightSearchZone />
+            {/* 밑에 검색창 때문에 전체를 use client 해주기는 좋지않음. */}
+            {/* <div style={{ marginBottom: 60, width: "inherit" }}>
               <form className={style.search}>
                 <svg width={20} viewBox="0 0 24 24" aria-hidden="true">
                   <g>
@@ -46,7 +49,7 @@ export default function AfterLogin({ children, modal }: Props) {
                 </svg>
                 <input type="search" />
               </form>
-            </div>
+            </div> */}
             <TrendSection />
             <div className={style.followRecommend}>
               <h3>팔로우 추천</h3>

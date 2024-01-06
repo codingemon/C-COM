@@ -8,7 +8,8 @@ import LogoutButton from "./_component/LogoutBuuton";
 import TrendSection from "./_component/TrendSection";
 import FollowRecommend from "./_component/FollowRecommend";
 
-export default function AfterLogin({ children }: { children: ReactNode }) {
+type Props = { children: ReactNode; modal: ReactNode };
+export default function AfterLogin({ children, modal }: Props) {
   return (
     // 로그인 후에 레이아웃을 해줄거임
     <div className={style.container}>
@@ -56,6 +57,7 @@ export default function AfterLogin({ children }: { children: ReactNode }) {
           </section>
         </div>
       </div>
+      {modal}
     </div>
   );
 }

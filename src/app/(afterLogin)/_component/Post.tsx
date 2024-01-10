@@ -6,6 +6,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/ko";
 import ActionBottons from "./ActionButtons";
 import PostAricle from "./PostAricle";
+import { faker } from "@faker-js/faker";
 
 dayjs.locale("ko");
 dayjs.extend(relativeTime);
@@ -20,8 +21,13 @@ export default function Post() {
     },
     content: "크아 종밥이들 다 모여라 서열정리하게",
     createdAt: new Date(),
-    Images: [],
+    Images: [] as any[],
   };
+  // 이미지 랜덤생성
+  if (Math.random() > 0.5) {
+    target.Images.push({ imageId: 1, link: faker.image.urlLoremFlickr() });
+  }
+
   return (
     // 전체를 클라이언트 컴포넌트로 만들어주기 좋지 않아서
     // PostAricle 일부분만 클라이언트 컴포넌트로 만들어줬다.
@@ -46,7 +52,16 @@ export default function Post() {
             </span>
           </div>
           <div>{target.content}</div>
-          <div className={style.postImageSection}></div>
+          <div className={style.postImageSection}>
+            {target.Images && target.Images.length > 0 && (
+              <Link
+                href={`/${target.User.id}/status/${target.postId}/photo/${target.Images[0].ImageId}`}
+                className={style.postImageSection}
+              >
+                <img src={target.Images[0]?.link} alt="" />
+              </Link>
+            )}
+          </div>
           <ActionBottons />
         </div>
       </div>

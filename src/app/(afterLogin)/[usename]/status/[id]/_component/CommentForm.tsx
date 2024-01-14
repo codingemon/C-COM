@@ -5,9 +5,9 @@ import style from "./commentForm.module.css";
 
 export default function CommentForm() {
   const [content, setContent] = useState("");
-  const imageRef = useRef<HTMLAnchorElement>(null);
+  const imageRef = useRef<HTMLInputElement>(null);
   const onClickButton = () => {};
-  const onSumbit = () => {};
+  const onSubmit = () => {};
   const onChange = () => {};
   const me = {
     id: "pikacoding",

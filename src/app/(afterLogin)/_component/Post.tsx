@@ -5,8 +5,8 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import "dayjs/locale/ko";
 import ActionBottons from "./ActionButtons";
-import PostAricle from "./PostAricle";
 import { faker } from "@faker-js/faker";
+import PostArticle from "./PostArticle";
 
 dayjs.locale("ko");
 dayjs.extend(relativeTime);
@@ -35,7 +35,7 @@ export default function Post({ noImage }: Props) {
   return (
     // 전체를 클라이언트 컴포넌트로 만들어주기 좋지 않아서
     // PostAricle 일부분만 클라이언트 컴포넌트로 만들어줬다.
-    <PostAricle post={target}>
+    <PostArticle post={target}>
       <div className={style.postWrapper}>
         <div className={style.postUserSection}>
           <Link href={`/${target.User.id}`} className={style.postUserImage}>
@@ -69,6 +69,6 @@ export default function Post({ noImage }: Props) {
           <ActionBottons />
         </div>
       </div>
-    </PostAricle>
+    </PostArticle>
   );
 }

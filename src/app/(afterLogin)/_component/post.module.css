@@ -5,7 +5,6 @@
   border-color: rgb(239, 243, 244);
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  /* 게시물에 손올렸을때 회색으로 만들어주기 */
   transition-property: background-color, box-shadow;
   transition-duration: 0.2s;
   cursor: pointer;
@@ -43,7 +42,6 @@
   border-radius: 20px;
 }
 
-/* 그림자를 만들어서 사진에 마우스를 올리면 그림자가 만들어지게 */
 .postShade {
   display: inline-block;
   width: 40px;
@@ -90,10 +88,85 @@
   flex-direction: row;
 }
 
-.postImageSection img {
+.postImageSection {
+  display: inline-block;
   margin-top: 12px;
   width: 100%;
   border-radius: 16px;
+}
+.postImageSection.oneImage {
+  max-height: 510px;
+  background-repeat: no-repeat;
+}
+.postImageSection img {
+  border-radius: 16px;
+  max-height: 510px;
+  width: 100%;
+}
+.postImageSection.twoImage {
+  height: 272px;
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+.postImageSection.twoImage a {
+  flex: 1;
+}
+.postImageSection.twoImage a:first-child {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+.postImageSection.twoImage a:last-child {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+.postImageSection.threeImage {
+  height: 272px;
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+.postImageSection.threeImage > a,
+.postImageSection.threeImage > div {
+  flex: 1;
+}
+.postImageSection.threeImage > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.postImageSection.threeImage > div > a {
+  flex: 1;
+}
+.postImageSection.threeImage > a:first-child {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+.postImageSection.threeImage > div > a:first-child {
+  border-top-right-radius: 16px;
+}
+.postImageSection.threeImage > div > a:last-child {
+  border-bottom-right-radius: 16px;
+}
+
+.postImageSection.fourImage {
+  height: 272px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.postImageSection.fourImage > a:nth-child(1) {
+  border-top-left-radius: 16px;
+}
+.postImageSection.fourImage > a:nth-child(2) {
+  border-top-right-radius: 16px;
+}
+.postImageSection.fourImage > a:nth-child(3) {
+  border-bottom-left-radius: 16px;
+}
+.postImageSection.fourImage > a:nth-child(4) {
+  border-bottom-right-radius: 16px;
 }
 
 .actionButtons {
@@ -145,6 +218,7 @@
 .commentButton:hover button {
   background-color: rgba(29, 155, 240, 0.1);
 }
+
 .commentButton.white svg,
 .commentButton.white .count {
   fill: white;

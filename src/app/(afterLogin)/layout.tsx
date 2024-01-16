@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import style from "@/app/(afterLogin)/layout.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import ZLogo from "../../../public/zlogo.png";
+import CLogo from "../../../public/clogo.png";
 import NavMenu from "@/app/(afterLogin)/_component/NavMenu";
 import TrendSection from "@/app/(afterLogin)/_component/TrendSection";
 import FollowRecommend from "@/app/(afterLogin)/_component/FollowRecommend";
@@ -18,7 +18,7 @@ export default function AfterLoginLayout({ children, modal }: Props) {
           <div className={style.leftSectionFixed}>
             <Link className={style.logo} href="/home">
               <div className={style.logoPill}>
-                <Image src={ZLogo} alt="z.com로고" width={40} height={40} />
+                <Image src={CLogo} alt="c.com로고" width={40} height={40} />
               </div>
             </Link>
             <nav>

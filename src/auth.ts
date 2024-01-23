@@ -12,7 +12,7 @@ export const {
   },
   providers: [
     CredentialsProvider({
-      // 로그인 수행시 호출 된다.
+      // 로그인 수행시 호출
       async authorize(credentials) {
         const authResponse = await fetch(`${process.env.AUTH_URL}/api/login`, {
           method: "POST",
@@ -31,7 +31,12 @@ export const {
 
         const user = await authResponse.json();
 
-        return user;
+        return {
+          id: user.id,
+          name: user.nickname,
+          image: user.image,
+          ...user,
+        };
       },
     }),
   ],

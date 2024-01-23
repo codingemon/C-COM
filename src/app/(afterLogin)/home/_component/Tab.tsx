@@ -1,16 +1,14 @@
 "use client";
-
-import { useState } from "react";
 import style from "./tab.module.css";
+import { useState } from "react";
 
 export default function Tab() {
   const [tab, setTab] = useState("rec");
 
-  //   서로 눌러줄때 바꿔주는 역할
+  // 서로눌러줄때 바꿔주는 역할
   const onClickRec = () => {
     setTab("rec");
   };
-
   const onClickFol = () => {
     setTab("fol");
   };

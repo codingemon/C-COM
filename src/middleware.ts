@@ -1,7 +1,13 @@
-export { auth as middleware } from "./auth";
-// auth가 알아서 관리해줌
+import { auth } from "./auth";
+import { NextResponse } from "next/server";
 
-// 미들웨어 적용 목록
+export async function middleware() {
+  const session = await auth();
+  if (!session) {
+    return NextResponse.redirect("http://localhost:3000/i/flow/login");
+  }
+}
+
 export const config = {
-  matcher: ["./compose/tweet", "/home", "/explore", "/messages", "/search"],
+  matcher: ["/compose/tweet", "/home", "/explore", "/messages", "/search"],
 };

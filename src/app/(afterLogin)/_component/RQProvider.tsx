@@ -23,6 +23,7 @@ function RQProvider({ children }: Props) {
 
   return (
     <QueryClientProvider client={client}>
+      {/* 리액트쿼리 데이터 서로 공유 */}
       {children}
       <ReactQueryDevtools
         initialIsOpen={process.env.NEXT_PUBLIC_MODE === "local"}
